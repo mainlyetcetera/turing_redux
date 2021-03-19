@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { addToDo } from '../actions'
+import { connect } from  'react-redux'
 
 class AddTodoForm extends Component {
   constructor(props) {
@@ -32,4 +33,8 @@ class AddTodoForm extends Component {
   }
 }
 
-export default AddTodoForm;
+const mapDispatchToProps = dispatch => ({
+  addToDo: text => dispatch( addToDo(text) )
+})
+
+export default connect(null, mapDispatchToProps)(AddTodoForm)
