@@ -8,7 +8,7 @@ class AddTodoForm extends Component {
     this.state = { todo: '' };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ todo: e.target.value });
   }
 
