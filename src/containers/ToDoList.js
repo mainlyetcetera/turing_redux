@@ -9,3 +9,9 @@ const ToDoList = ({todos}) => {
     </ul>
   )
 }
+
+const mapStateToProps = state => ({
+  todos: state.todos
+})
+
+export default connect(mapStateToProps)(ToDoList)
