@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { addToDo } from '../actions'
 
 class AddTodoForm extends Component {
   constructor(props) {
@@ -10,9 +11,10 @@ class AddTodoForm extends Component {
     this.setState({ todo: e.target.value });
   }
 
-  submitForm = (e) => {
+  submitForm = e => {
     e.preventDefault()
-    this.setState({ todo: '' });
+    this.props.addToDo(this.state.todo)
+    this.setState({ todo: '' })
   }
 
   render() {
